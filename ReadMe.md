@@ -272,6 +272,7 @@ LogisticRegression(class_weight='balanced')
 
 > 2.打开加减大师，直接运行`main.py`即可。
 
+![image](http://pc9s42i7c.bkt.clouddn.com/18-8-8/36649777.jpg)
 
 #### 遇到的问题
 > Q1: 跑到200步左右就停了？
