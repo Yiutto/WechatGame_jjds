@@ -1,0 +1,11 @@
+我用的是Python36
+
+需要安装的包：
+scipy
+numpy
+pymouse
+Pillow
+pywin32-223.1-cp36-cp36m-win_amd64.whl
+
+如果出现ModuleNotFoundError: No module named 'windows'
+把from windows import PyMouse, PyMouseEvent 改为from pymouse.windows import PyMouse, PyMouseEvent
