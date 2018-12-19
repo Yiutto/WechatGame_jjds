@@ -248,7 +248,7 @@ LogisticRegression(class_weight='balanced')
 
 > 2.对于新的手机(我用的是honor8)，必须重新训练模型，设置`config.py`中的`debug`参数为True，打开“加减大师”，然后运行`main.py`,这里必须手动答题，尽可能多答对一些题，目的为了扩充训练样本。
 
-> 3.步骤2会产生一个`SingleCharForTrain`文件夹，剔除重复样本和无关样本。
+> 3.步骤2会产生一个`ScreenShotForTrain`文件夹，剔除重复样本和无关样本。
 
 > 4.运行`img_tool.py`文件，会生成一个`SingleCharForTrain`文件夹。
 
