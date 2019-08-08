@@ -23,6 +23,7 @@
 
 相关步骤：
 > 1.`util.py`中的`shotByWinAPI`函数：首先利用window自带api获取全屏图片，然后自定义`config.py`的相关参数。
+
 ```
 # 从PC端截屏时，截取区域左上角相对桌面的x坐标
 'projection_x': 32,
@@ -34,16 +35,19 @@
 'projection_height': 854,
 
 ```
-可以用window命令键`PrtScSysRq`(F12的右边)，然后复制到画图中（1920x1080）。![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/86460572.jpg)
+
+可以用window命令键`PrtScSysRq`(F12的右边)，然后复制到画图中（1920x1080）。
+![image](https://note.youdao.com/yws/api/personal/file/D5914471B29F477286145D1294E0618E?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
 -------------------
 用画图的放大镜放大，图中红色框的小方块位置（32x278）`projection_x`即32，`projection_y`即278。
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/4432894.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/91B50A094A2C48AF8F07EFC5271F767D?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
 -------------
 在画图中计算出截图的宽度和高度，即`projection_width`和`projection_height`（482x854）
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/9003305.jpg)
+
+![image](https://note.youdao.com/yws/api/personal/file/5FCDF8612E3B40668C6809E247963C60?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
 > 2.`img_tool.py`函数介绍：主要是通过`all(img, filename)`函数进行图片分割
 
@@ -51,7 +55,9 @@
 srcImg = cv2.imread(os.path.join("ScreenShotForTrain", f), 0)
 ```
 上述代码是为了将彩色图片灰度模式加载
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/66344763.jpg)
+
+![image](https://note.youdao.com/yws/api/personal/file/5A04CACA3D4641BD866AA4B0B5807C1B?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+
 ------------------------------------------
 
 ```
@@ -84,7 +90,7 @@ def cropImg(img):
 ```
 
 如果觉得设置比例太麻烦，可以直接写死位置(`img2 = img[int(307):int(478),:]`)。得到如下图：
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/52091262.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/A2D99397EFA24F6DB29271BB224FFD8D?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 ----------------
 ```
 def binaryImg(img):
@@ -97,9 +103,10 @@ def binaryImg(img):
 
 
 `binaryImg(img)`函数主要是为了将图片二值化，可以参考
+
 [Python+OpenCV教程6：阈值分割](https://www.jianshu.com/p/293e04f134c3)。得到的图片如下图：
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/58505829.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/6C103BF6BBCA4926BC80C59D52056F49?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
 ----------------------------------
 
@@ -116,8 +123,8 @@ def cropAgain(img):
 
 `cropAgain(img)`函数主要是为了将图片分成上下两部分
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/79175528.jpg)
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/1777681.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/50ED0F9D9CFD44DD8B9AC1BB7810128A?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+![image](https://note.youdao.com/yws/api/personal/file/2F36AB9C98B7405496AE4761E4F0235F?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
 ----------------------------------
 
@@ -169,11 +176,11 @@ def cutImg(img, filename):
 
 设置`pc_single_char_width`参数值，得到如下图：
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/55147013.jpg) ![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/65231279.jpg) ![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/40189572.jpg) ![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/15904390.jpg) ![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/50344866.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/A5FD713685C9499DB19E5CE425FAAB37?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda) ![image](https://note.youdao.com/yws/api/personal/file/C895E52552C142B79EE240B0F314E8AB?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda) ![image](https://note.youdao.com/yws/api/personal/file/34C168527BBF4A53BAD37785D6C41AD5?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda) ![image](https://note.youdao.com/yws/api/personal/file/340F8D913EC84CB79976052262C1E1B7?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda) ![image](https://note.youdao.com/yws/api/personal/file/715CE3D3AEF74B2B9764EF8C4B9A184A?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/5406106.jpg)
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/43711210.jpg)
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/77963143.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/4A5F5F1EDCBF4D77B0CEA9957E7725DF?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+![image](https://note.youdao.com/yws/api/personal/file/07E0A372CAD34418B614CA17E13BEE81?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+![image](https://note.youdao.com/yws/api/personal/file/F01B9F4D00B64BC29D171FF7AFE9008F?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
 -----------------------------------------------------
 
@@ -206,15 +213,15 @@ def v_cut(img):
 
 重新固定图片的大小（30x60），得到如下图：
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/4161023.jpg)
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/84386419.jpg)
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/43616209.jpg)
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/10768391.jpg)
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/63290440.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/4927C25961F74691A8A6C083DFC01A2D?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+![image](https://note.youdao.com/yws/api/personal/file/E753FF4241C447D292AE8AB5009813EB?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+![image](https://note.youdao.com/yws/api/personal/file/B1E322735037479BA84B6CABD6700C92?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+![image](https://note.youdao.com/yws/api/personal/file/0965F84FAF1944279EFFF00BC3E59C6B?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+![image](https://note.youdao.com/yws/api/personal/file/11CB31083E4F4332ACEC9154B1A99124?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/29282307.jpg)
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/70245630.jpg)
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/70026797.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/6D774999453E4486B0912ED014C28233?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+![image](https://note.youdao.com/yws/api/personal/file/EDCB8B943E4744909102ECDB38B1D96D?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+![image](https://note.youdao.com/yws/api/personal/file/6B11935B3DC848059FCE7B3017339F1F?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
 --------------------
 
@@ -248,7 +255,7 @@ LogisticRegression(class_weight='balanced')
 
 > 2.对于新的手机(我用的是honor8)，必须重新训练模型，设置`config.py`中的`debug`参数为True，打开“加减大师”，然后运行`main.py`,这里必须手动答题，尽可能多答对一些题，目的为了扩充训练样本。
 
-> 3.步骤2会产生一个`ScreenShotForTrain`文件夹，剔除重复样本和无关样本。
+> 3.步骤2会产生一个`SingleCharForTrain`文件夹，剔除重复样本和无关样本。
 
 > 4.运行`img_tool.py`文件，会生成一个`SingleCharForTrain`文件夹。
 
@@ -272,7 +279,10 @@ LogisticRegression(class_weight='balanced')
 
 > 2.打开加减大师，直接运行`main.py`即可。
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-8/36649777.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/53BF31DDF54043BE9EEE141B9A89FCE0?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
+
+
+
 
 #### 遇到的问题
 > Q1: 跑到200步左右就停了？
@@ -317,11 +327,11 @@ elif (count < 500):
 
 最后放出我的娃娃来，手机上显示的是这样的
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/9652825.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/0B2E9C8950714C6FBC5AC9E489F90632?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
 到手的时候却是这样的（本来以为没戏了，等了将近一个星期）
 
-![image](http://pc9s42i7c.bkt.clouddn.com/18-8-7/92629451.jpg)
+![image](https://note.youdao.com/yws/api/personal/file/B1B2EF566F784BCD8444F973D8A677BC?method=download&shareKey=87d4652e9712eea176bb7a67b68c0bda)
 
 
 **最后，祝大家都能拿到娃娃！！！**
